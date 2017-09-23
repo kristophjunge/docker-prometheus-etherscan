@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  prometheus_etherscan:
+    container_name: prometheus_etherscan
+    build: .
+    environment:
+      TEST_MODE: "${TEST_MODE}"
+      API_KEY: "${API_KEY}"
+      ACCOUNTS: "${ACCOUNTS}"
+    ports:
+      - "9205:9205"
+    volumes:
+      - "/etc/ssl/certs:/etc/ssl/certs" # Needed for HTTPS calls
