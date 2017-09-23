@@ -117,7 +117,7 @@ func metrics(w http.ResponseWriter, r *http.Request) {
     // Output
     io.WriteString(w, formatValue("etherscan_up", "", integerToString(up)))
     for _, Account := range jsonData.Result {
-        io.WriteString(w, formatValue("etherscan_up", "account=\"" + Account.Account + "\"", baseUnitsToEth(Account.Balance, 19)))
+        io.WriteString(w, formatValue("etherscan_balance", "account=\"" + Account.Account + "\"", baseUnitsToEth(Account.Balance, 19)))
     }
 }
 
