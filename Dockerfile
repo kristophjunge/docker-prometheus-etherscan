@@ -8,4 +8,6 @@ COPY . .
 
 RUN go build -v -o bin/app src/app.go
 
+EXPOSE 9205
+
 CMD ["./bin/app"]
